@@ -335,7 +335,7 @@ declare module 'discord.js' {
     public once(event: 'collect' | 'dispose', listener: (...args: any[]) => void): this;
     public once(event: 'end', listener: (collected: Collection<K, V>, reason: string) => void): this;
   }
-                                                          
+
   export class CommandInteraction extends Interaction {
     constructor(client: Client, data: object, syncHandle: any);
     public readonly commandID: Snowflake;
@@ -344,19 +344,19 @@ declare module 'discord.js' {
     public readonly createdTimestamp: number;
     public readonly options: object;
     public reply(
-      content: APIMessageContentResolvable | (MessageOptions & { split?: false }) | MessageAdditions,
-    ): Promise<void>;
-    public reply(options: MessageOptions & { split: true | SplitOptions }): Promise<void>;
-    public reply(options: MessageOptions | APIMessage): Promise<void>;
-    public reply(
-      content: StringResolvable,
-      options: (MessageOptions & { split?: false }) | MessageAdditions,
-    ): Promise<void>;
-    public reply(
-      content: StringResolvable,
-      options: MessageOptions & { split: true | SplitOptions },
-    ): Promise<void>;
-    public reply(content: StringResolvable, options: MessageOptions): Promise<void>;
+	  content: APIMessageContentResolvable | (MessageOptions & { split?: false }) | MessageAdditions,
+	): Promise<Message>;
+	public reply(options: MessageOptions & { split: true | SplitOptions }): Promise<Message[]>;
+	public reply(options: MessageOptions | APIMessage): Promise<Message | Message[]>;
+	public reply(
+	  content: StringResolvable,
+	  options: (MessageOptions & { split?: false }) | MessageAdditions,
+	): Promise<Message>;
+	public reply(
+	  content: StringResolvable,
+	  options: MessageOptions & { split: true | SplitOptions },
+	): Promise<Message[]>;
+	public reply(content: StringResolvable, options: MessageOptions): Promise<Message | Message[]>;
   }
 
   type AllowedImageFormat = 'webp' | 'png' | 'jpg' | 'jpeg' | 'gif';
