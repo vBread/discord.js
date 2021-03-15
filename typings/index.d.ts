@@ -995,7 +995,7 @@ declare module 'discord.js' {
     public createCommand(command: ApplicationCommandOptions, guildID?: Snowflake): Promise<ApplicationCommand>;
     public fetchCommands(guildID?: Snowflake): Promise<ApplicationCommand[]>;
     public middleware(): (req: any, res: any) => Promise<void>;
-    public setCommands(commands: ApplicationCommandOptions[], guildID?: Snowflake): Promise<ApplicationCommand[]>
+    public setCommands(commands: ApplicationCommandOptions[], guildID?: Snowflake): Promise<ApplicationCommand[]>;
   }
 
   export class Invite extends Base {
@@ -2376,7 +2376,7 @@ declare module 'discord.js' {
     id: Snowflake;
     type: 'BIG' | 'SMALL';
   }
-                                                          
+
   interface ApplicationCommandOptions {
     type: ApplicationCommandOptionType;
     name: string;
@@ -2924,7 +2924,7 @@ declare module 'discord.js' {
     | 'DIRECT_MESSAGES'
     | 'DIRECT_MESSAGE_REACTIONS'
     | 'DIRECT_MESSAGE_TYPING';
-                                                          
+
   type InteractionResponseType = 'PONG' | 'CHANNEL_MESSAGE_WITH_SOURCE' | 'DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE';
 
   type InteractionType = 'PING' | 'APPLICATION_COMMAND';
@@ -3043,8 +3043,8 @@ declare module 'discord.js' {
     target: WebSocket;
   }
 
-  type MessageFlagsString = 
-  	| 'CROSSPOSTED' 
+  type MessageFlagsString =
+  	| 'CROSSPOSTED'
     | 'IS_CROSSPOST'
     | 'SUPPRESS_EMBEDS'
     | 'SOURCE_MESSAGE_DELETED'
