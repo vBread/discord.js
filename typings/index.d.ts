@@ -2496,6 +2496,7 @@ declare module 'discord.js' {
     guildMemberSpeaking: [member: GuildMember | PartialGuildMember, speaking: Readonly<Speaking>];
     guildMemberUpdate: [oldMember: GuildMember | PartialGuildMember, newMember: GuildMember];
     guildUpdate: [oldGuild: Guild, newGuild: Guild];
+	interactionCreate: [interaction: Interaction];
     inviteCreate: [invite: Invite];
     inviteDelete: [invite: Invite];
     message: [message: Message];
